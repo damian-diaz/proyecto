@@ -41,6 +41,9 @@ function mostrarMenu() {
 
 function ingresarJugador() {
     let nuevoJugador = prompt("Ingrese un nuevo jugador")
+    let edad=Number(prompt("Ingrese edad del jugador"))
+    let dorsal=Number(prompt("Ingrese numero de camiseta"))
+    let posicion=prompt("Ingrse posicion")
     jugadores.push(nuevoJugador);
     alert("jugador ingresado con Éxito")
 }
