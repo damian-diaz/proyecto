@@ -1,6 +1,7 @@
-class Jugador{
-    constructor(edad, dorsal, posicion)
+class Jugador {
+    constructor(nombre,edad,dorsal,posicion)
     {
+        this.nombre=nombre;
         this.edad=edad;
         this.dorsal=dorsal;
         this.posicion=posicion;

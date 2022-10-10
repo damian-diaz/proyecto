@@ -1,6 +1,15 @@
 
-let jugadores = [""]
-
+/* La idea es armar una aplicacion en la cual se puede cargar los datos de los jugadores de un equipo de futbol,
+ y ademas se pueda agregar nuevos jugadores*/
+const jugadores =[
+    {nombre:"Tomy",edad:28,dorsal:1,posicion:"Arquero"},
+    {nombre:"Pablo",edad:32,dorsal:2,posicion:"Defensor"},
+    {nombre:"Damian",edad:37,dorsal:6,posicion:"Defensor"},
+    {nombre:"Eze",edad:37,dorsal:5,posicion:"Medio"},
+    {nombre:"Maty",edad:37,dorsal:9,posicion:"Delantero"},
+]
+const catalogoJugadores=new CatalogoJugadores(jugadores);
+console.log("Jugadores Originales",catalogoJugadores.jugadores)
 mostrarMenu();
 
 
@@ -40,11 +49,13 @@ function mostrarMenu() {
 }
 
 function ingresarJugador() {
-    let nuevoJugador = prompt("Ingrese un nuevo jugador")
+    let nombre= prompt("Ingrese un nuevo jugador")
     let edad=Number(prompt("Ingrese edad del jugador"))
     let dorsal=Number(prompt("Ingrese numero de camiseta"))
     let posicion=prompt("Ingrse posicion")
-    jugadores.push(nuevoJugador);
+    
+   let jugador= new Jugador(catalogoJugadores.darCantidad() + 1, nombre, edad, dorsal, posicion);
+    catalogoJugadores.agregarJugador(jugador);
     alert("jugador ingresado con Éxito")
 }
 
